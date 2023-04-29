@@ -241,7 +241,6 @@ def main():
     ### ----------------------- prédiction d'un client ----------------
     
     if st.sidebar.checkbox("analyse & prédiction client", key=38):
-        with st.spinner('Data load in progress...'):
         #récuperer score et le threshold
         score, threshold = fonction_score_model(selected_id)
         #afficher score et proba
