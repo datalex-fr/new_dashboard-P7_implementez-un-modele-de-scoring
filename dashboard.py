@@ -242,7 +242,6 @@ def main():
     
     if st.sidebar.checkbox("analyse & prédiction client", key=38):
         with st.spinner('Data load in progress...'):
-        time.sleep(2)
         st.write(data_selected_cust)
         #récuperer score et le threshold
         score, threshold = fonction_score_model(selected_id)
