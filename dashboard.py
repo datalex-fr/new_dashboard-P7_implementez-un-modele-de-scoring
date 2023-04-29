@@ -15,11 +15,7 @@ def main():
 
     st.set_page_config(page_title='Prêt à dépenser : P7',
                        layout='centered',
-                       initial_sidebar_state='expanded',
-                        menu_items={
-        'Get Help': '',
-        'Report a bug': "",
-        'About': "# This is a header. This is an *extremely* cool app!"})
+                       initial_sidebar_state='expanded')
     #titre dashboard
     st.title('Prêt à dépenser : P7')
 
