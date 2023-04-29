@@ -10,5 +10,5 @@ protobuf==3.20.*
 numpy
 scipy
 dill
-scikit_learn
+scikit_learn==1.1.1
 python-3.7
