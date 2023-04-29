@@ -61,7 +61,7 @@ def main():
         #conversion json en dictionnaire python
         content = json.loads(response.content.decode('utf-8'))
         x_client = pd.DataFrame(content['data'])
-        y_client = (pd.Series(content['y_cust']).rename('TARGET'))
+        y_client = (pd.Series(content['y_client']).rename('TARGET'))
         return x_client, y_client
 
     @st.cache
