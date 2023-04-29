@@ -11,4 +11,4 @@ numpy
 scipy
 dill
 scikit_learn
-python-3.7.0
+python-3.7
