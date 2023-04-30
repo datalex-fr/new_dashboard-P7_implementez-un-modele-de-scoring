@@ -265,7 +265,7 @@ def main():
                 #récuprer valeurs shap pour le client & valeurs prédites
                 shap_vals, expected_vals = values_shap(selected_id)
                 #recuperer variable
-                features = feat()
+                features = feature()
                 nb_features = st.slider("nombre de variable à afficher",
                                         min_value=2,
                                         max_value=50,
@@ -299,7 +299,7 @@ def main():
                 #recupere les valeurs shap du client
                 shap_vals, expected_vals = values_shap(selected_id)
                 #recuperer les noms des variables
-                features = feat()
+                features = feature()
                 #recuperer les colonnes choisis
                 disp_box_cols = list_display_feature(features, 2, key=45)
                 # 10 neighbors du client :
