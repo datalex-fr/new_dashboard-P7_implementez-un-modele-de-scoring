@@ -305,7 +305,7 @@ def main():
                 # 10 neighbors du client :
                 data_neigh, target_neigh = fonction_data_neigh(selected_id)
                 x_cust, y_cust = selected_client_data(selected_id)
-                x_customer.columns = x_customer.columns.str.split('.').str[0]
+                x_client.columns = x_client.columns.str.split('.').str[0]
                 target_neigh = target_neigh.replace({0: 'credit remboursé (10 voisins)',
                                                      1: 'default de paiement (10 voisins)'})
 
@@ -329,7 +329,7 @@ def main():
 
 
                 # client data
-                df_selected_cust = pd.concat([x_customer[disp_box_cols], y_cust], axis=1)
+                df_selected_cust = pd.concat([x_client[disp_box_cols], y_cust], axis=1)
                 df_melt_sel_cust = df_selected_cust.reset_index()
                 df_melt_sel_cust.columns = ['index'] + list(df_melt_sel_cust.columns)[1:]
                 df_melt_sel_cust = df_melt_sel_cust.melt(id_vars=['index', 'TARGET'],
