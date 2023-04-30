@@ -100,7 +100,7 @@ def main():
         #conversion json en dictionnaire python
         content = json.loads(response.content)
         #recuperer les ids de "content"
-        shapvals = pd.DataFrame(content['shap_val_cust'].values())
+        shapvals = pd.DataFrame(content['shap_val_client'].values())
         expec_vals = pd.DataFrame(content['expected_vals'].values())
         return shapvals, expec_vals
 
