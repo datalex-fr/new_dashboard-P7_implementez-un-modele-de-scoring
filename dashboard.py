@@ -152,7 +152,7 @@ def main():
         #requeter l'api et copier la reponse
         response = requests.get(neight_data_api_url)
         #conversion json en dictionnaire python
-        content = json.loads(response.content.decode('utf-8'))
+        content = json.loads(response.content.decode())
         #conversion en pd.DataFrame et pd.Series
         data_neig = pd.DataFrame(content['data_neigh'])
         target_neig = (pd.Series(content['y_neigh']).rename('TARGET'))
