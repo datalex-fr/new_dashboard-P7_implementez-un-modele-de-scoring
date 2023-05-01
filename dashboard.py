@@ -24,7 +24,7 @@ def main():
     def list_display_feature(f, def_n, key):
         all_feat = f
         n = st.slider("nombre de variable à afficher",
-                      min_value=2, max_value=25,
+                      min_value=3, max_value=25,
                       value=def_n, step=None, format=None, key=key)
 
         disp_cols = list(features_importances().sort_values(ascending=False).iloc[:n].index)
