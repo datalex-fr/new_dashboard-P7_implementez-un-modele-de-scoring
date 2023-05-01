@@ -267,7 +267,7 @@ def main():
                 #recuperer variable
                 features = feature()
                 nb_features = st.slider("nombre de variable à afficher",
-                                        min_value=2,
+                                        min_value=3,
                                         max_value=50,
                                         value=10,
                                         step=None,
