@@ -24,7 +24,7 @@ def main():
     def list_display_feature(f, def_n, key):
         all_feat = f
         n = st.slider("nombre de variable à afficher",
-                      min_value=3, max_value=25,
+                      min_value=2, max_value=25,
                       value=def_n, step=None, format=None, key=key)
 
         disp_cols = list(features_importances().sort_values(ascending=False).iloc[:n].index)
@@ -268,7 +268,7 @@ def main():
                 #recuperer variable
                 features = feature()
                 nb_features = st.slider("nombre de variable à afficher",
-                                        min_value=3,
+                                        min_value=2,
                                         max_value=50,
                                         value=10,
                                         step=None,
@@ -302,7 +302,7 @@ def main():
                 #recuperer les noms des variables
                 features = feature()
                 #recuperer les colonnes choisis
-                disp_box_cols = list_display_feature(features, 3, key=45)
+                disp_box_cols = list_display_feature(features, 2, key=45)
                 # 10 neighbors du client :
                 data_neigh, target_neigh, x_customer = fonction_data_neigh(selected_id)
                 x_cust, y_cust = selected_client_data(selected_id)
