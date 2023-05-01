@@ -301,7 +301,7 @@ def main():
                 #recuperer les noms des variables
                 features = feature()
                 #recuperer les colonnes choisis
-                disp_box_cols = list_display_feature(features, 2, key=45)
+                disp_box_cols = list_display_feature(features, 3, key=45)
                 # 10 neighbors du client :
                 data_neigh, target_neigh, x_customer = fonction_data_neigh(selected_id)
                 x_cust, y_cust = selected_client_data(selected_id)
