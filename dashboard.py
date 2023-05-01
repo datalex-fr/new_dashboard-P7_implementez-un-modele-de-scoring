@@ -155,7 +155,8 @@ def main():
         #conversion en pd.DataFrame et pd.Series
         data_neig = pd.DataFrame(content['data_neigh'])
         target_neig = (pd.Series(content['y_neigh']).rename('TARGET'))
-        return data_neig, target_neig
+        x_custom = pd.DataFrame(content['x_custom'])
+        return data_neig, target_neig, x_custom
 
 
 
