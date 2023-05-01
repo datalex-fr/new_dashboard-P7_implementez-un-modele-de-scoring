@@ -145,6 +145,7 @@ def main():
         return feat_imp
 
     #donnée des 10 nearest neighbors dans le train_set
+    @st.cache
     def fonction_data_neigh(selected_id):
         #creer l'url scoring API
         neight_data_api_url = API_URL + "neigh_client/?SK_ID_CURR=" + str(selected_id)
