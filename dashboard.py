@@ -11,7 +11,7 @@ import shap
 
 def main():
 
-    API_URL = "https://oc-p7-api7.herokuapp.com/app/"
+    API_URL = "https://oc-p7-api7.herokuapp.com/"
 
     st.set_page_config(page_title='Prêt à dépenser : P7',
                        layout='centered',
