@@ -148,9 +148,9 @@ def main():
     @st.cache
     def fonction_data_neigh_10(selected_id):
         #creer l'url scoring API
-        neight_data_api_url = API_URL + "neigh_client_10/?SK_ID_CURR=" + str(selected_id)
+        neight_10_data_api_url = API_URL + "neigh_client_10/?SK_ID_CURR=" + str(selected_id)
         #requeter l'api et copier la reponse
-        response = requests.get(neight_data_api_url)
+        response = requests.get(neight_10_data_api_url)
         #conversion json en dictionnaire python
         content = json.loads(response.content.decode('utf-8'))
         #conversion en pd.DataFrame et pd.Series
@@ -162,15 +162,9 @@ def main():
 
     @st.cache
     def fonction_data_neigh_20(selected_id):
-        thousand_neight_data_api_url = API_URL + "neigh_client_20/?SK_ID_CURR=" + str(selected_id)
-        # save the response of API request
-        response = requests.get(thousand_neight_data_api_url)
-        # convert from JSON format to Python dict
+        neight_20_data_api_url = API_URL + "neigh_client_20/?SK_ID_CURR=" + str(selected_id)
+        response = requests.get(neight_20_data_api_url)
         content = json.loads(response.content.decode('utf-8'))
-        # convert data to pd.DataFrame and pd.Series
-        # targ_all_cust = (pd.Series(content['target_all_cust']).rename('TARGET'))
-        # target_select_cust = (pd.Series(content['target_selected_cust']).rename('TARGET'))
-        # data_all_customers = pd.DataFrame(content['data_all_cust'])
         data_thousand_neig = pd.DataFrame(content['X_thousand_neigh'])
         x_custo = pd.DataFrame(content['x_custom'])
         target_thousand_neig = (pd.Series(content['y_thousand_neigh']).rename('TARGET'))
