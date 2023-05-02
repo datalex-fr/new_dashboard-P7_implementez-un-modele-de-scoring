@@ -146,9 +146,9 @@ def main():
 
     #donnée des 10 nearest neighbors dans le train_set
     @st.cache
-    def fonction_data_neigh(selected_id):
+    def fonction_data_neigh_10(selected_id):
         #creer l'url scoring API
-        neight_data_api_url = API_URL + "neigh_client/?SK_ID_CURR=" + str(selected_id)
+        neight_data_api_url = API_URL + "neigh_client_10/?SK_ID_CURR=" + str(selected_id)
         #requeter l'api et copier la reponse
         response = requests.get(neight_data_api_url)
         #conversion json en dictionnaire python
@@ -156,11 +156,27 @@ def main():
         #conversion en pd.DataFrame et pd.Series
         data_neig = pd.DataFrame(content['data_neigh'])
         target_neig = (pd.Series(content['y_neigh']).rename('TARGET'))
-        x_custo = pd.DataFrame(content['X_client'])
-        return data_neig, target_neig, x_custo
+        return data_neig, target_neig
 
 
 
+    @st.cache
+    def fonction_data_neigh_20(selected_id):
+        thousand_neight_data_api_url = API_URL + "neigh_client_20/?SK_ID_CURR=" + str(selected_id)
+        # save the response of API request
+        response = requests.get(thousand_neight_data_api_url)
+        # convert from JSON format to Python dict
+        content = json.loads(response.content.decode('utf-8'))
+        # convert data to pd.DataFrame and pd.Series
+        # targ_all_cust = (pd.Series(content['target_all_cust']).rename('TARGET'))
+        # target_select_cust = (pd.Series(content['target_selected_cust']).rename('TARGET'))
+        # data_all_customers = pd.DataFrame(content['data_all_cust'])
+        data_thousand_neig = pd.DataFrame(content['X_thousand_neigh'])
+        x_custo = pd.DataFrame(content['x_custom'])
+        target_thousand_neig = (pd.Series(content['y_thousand_neigh']).rename('TARGET'))
+        return data_thousand_neig, target_thousand_neig, x_custo
+    
+    
 
     st.sidebar.title("menu")
     #liste des clients par ids
