@@ -257,9 +257,9 @@ def main():
         st.write('threshold : {:.0f}%'.format(threshold * 100))
         #décision sur le pret bancaire
         if score >= threshold:
-            decision = "crédit accordé"
-        else:
             decision = "crédit rejeté"
+        else:
+            decision = "crédit accordé"
         st.write("décision :", decision)
         
     ### ------------------- graph gauge ------------------------------
