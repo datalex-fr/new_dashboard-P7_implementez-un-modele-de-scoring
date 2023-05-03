@@ -390,7 +390,7 @@ def main():
                 expander = st.expander("explication distribution =>")
                 expander.write("les boîtes à moustaches montrent la dispersion des valeurs des caractéristiques prétraitées\
                 utilisé par le modèle. La boîte à moustaches verte correspond aux clients qui ont remboursé \
-                leur prêt, et les boîtes à moustaches rouges sont pour les clients qui ne l'ont pas remboursé.
+                leur prêt, et les boîtes à moustaches rouges sont pour les clients qui ne l'ont pas remboursé.")
 
 
 if __name__ == "__main__":
