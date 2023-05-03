@@ -315,7 +315,7 @@ def main():
                 #recuperer les colonnes choisis
                 disp_box_cols = list_display_feature(features, 2, key=45)
                 # 10 neighbors du client :
-                data_neigh, target_neigh, x_customer = fonction_data_neigh_10(selected_id)
+                data_neigh, target_neigh = fonction_data_neigh_10(selected_id)
                 data_thousand_neigh, target_thousand_neigh, x_customer = fonction_data_neigh_20(selected_id)
                 x_cust, y_cust = selected_client_data(selected_id)
                 x_customer.columns = x_customer.columns.str.split('.').str[0]
