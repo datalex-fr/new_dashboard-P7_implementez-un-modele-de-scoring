@@ -388,13 +388,9 @@ def main():
                 10 nearest neighbors')
 
                 expander = st.expander("explication distribution =>")
-                expander.write("Ces boîtes à moustaches montrent la dispersion des valeurs des caractéristiques prétraitées\
-                utilisé par le modèle pour faire une prédiction. La boîte à moustaches verte correspond aux clients qui ont remboursé \
-                leur prêt, et les boîtes à moustaches rouges sont pour les clients qui ne l'ont pas remboursé.\
-                superposés (marqueurs) les valeurs\
-                des caractéristiques pour les 20 voisins les plus proches du client candidat dans l'ensemble d'apprentissage. Le \
-                la couleur des marqueurs indique si oui ou non ces voisins ont remboursé leur emprunt. \
-                Les valeurs du client candidat sont superposées en jaune")
+                expander.write("les boîtes à moustaches montrent la dispersion des valeurs des caractéristiques prétraitées\
+                utilisé par le modèle. La boîte à moustaches verte correspond aux clients qui ont remboursé \
+                leur prêt, et les boîtes à moustaches rouges sont pour les clients qui ne l'ont pas remboursé.
 
 
 if __name__ == "__main__":
