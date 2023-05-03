@@ -296,11 +296,8 @@ def main():
                 #explication
                 expander.write("Le graphique en cascade ci-dessus affiche \
                 explications pour la prédiction individuelle du client demandeur.\
-                Le bas d'un tracé en cascade commence par la valeur attendue de la sortie du modèle \
-                (c'est-à-dire la valeur obtenue si aucune information (caractéristiques) n'a été fournie), puis \
-                chaque ligne montre comment la contribution positive (rouge) ou négative (bleue) de \
-                chaque caractéristique déplace la valeur de la sortie de modèle attendue sur le \
-                ensemble de données d'arrière-plan à la sortie du modèle pour cette prédiction.")
+                la contribution positive (rouge) ou négative (bleue) de \
+                chaque caractéristique")
 
         ###------------------------ distribution ------------------------
         
