@@ -323,10 +323,10 @@ def main():
                                                      1: 'default de paiement (10 voisins)'})
                 
                 target_thousand_neigh = target_thousand_neigh.replace({0: 'credit remboursé (20 voisins)',
-                                                                       1: 'default de paiement (10 voisins)'})
+                                                                       1: 'default de paiement (20 voisins)'})
 
-                y_cust = y_cust.replace({0: 'credit remboursé (client)',
-                                         1: 'default de paiement (client)'})
+                y_cust = y_cust.replace({0: 'credit remboursé',
+                                         1: 'default de paiement'})
 
 
 
