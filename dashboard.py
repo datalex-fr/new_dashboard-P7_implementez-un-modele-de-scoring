@@ -316,14 +316,17 @@ def main():
                 disp_box_cols = list_display_feature(features, 2, key=45)
                 # 10 neighbors du client :
                 data_neigh, target_neigh, x_customer = fonction_data_neigh_20(selected_id)
+                data_thousand_neigh, target_thousand_neigh, x_customer = get_data_thousand_neigh(selected_id)
                 x_cust, y_cust = selected_client_data(selected_id)
                 x_customer.columns = x_customer.columns.str.split('.').str[0]
                 target_neigh = target_neigh.replace({0: 'credit remboursé (10 voisins)',
                                                      1: 'default de paiement (10 voisins)'})
+                
+                target_thousand_neigh = target_thousand_neigh.replace({0: 'credit remboursé (20 voisins)',
+                                                                       1: 'default de paiement (10 voisins)'})
 
                 y_cust = y_cust.replace({0: 'credit remboursé (client)',
                                          1: 'default de paiement (client)'})
-
 
 
 
@@ -339,6 +342,23 @@ def main():
                 sns.swarmplot(data=df_melt_neigh, x='variables', y='values', hue='TARGET', linewidth=1,
                               palette=['darkgreen', 'darkred'], marker='o', size=15, edgecolor='k', ax=ax)
 
+                
+                
+                # données client avec ses 20 neighbors
+                df_thousand_neigh = pd.concat([data_thousand_neigh[disp_box_cols], target_thousand_neigh], axis=1)
+                df_melt_thousand_neigh = df_thousand_neigh.reset_index()
+                df_melt_thousand_neigh.columns = ['index'] + list(df_melt_thousand_neigh.columns)[1:]
+                df_melt_thousand_neigh = df_melt_thousand_neigh.melt(id_vars=['index', 'TARGET'],
+                                                                     value_vars=disp_box_cols,
+                                                                     var_name="variables",  # "variables",
+                                                                     value_name="values")
+
+                sns.boxplot(data=df_melt_thousand_neigh, x='variables', y='values',
+                            hue='TARGET', linewidth=1, width=0.4,
+                            palette=['tab:green', 'tab:red'], showfliers=False,
+                            saturation=0.5, ax=ax)
+                
+                
 
                 # client data
                 df_selected_cust = pd.concat([x_customer[disp_box_cols], y_cust], axis=1)
