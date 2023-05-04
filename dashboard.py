@@ -175,7 +175,7 @@ def main():
     #liste des clients par ids
     cust_id = id_list()
     #selection de l'id
-    selected_id = st.sidebar.selectbox('entrer un id:', cust_id, key=18)
+    selected_id = st.sidebar.selectbox('Select Menu:', cust_id, key=18)
     st.write('Bonjour, veuillez choisir id du client à renseigner ')
     st.write('id selectionné = ', selected_id)
 
